@@ -8,7 +8,7 @@ start = time.time()
 
 ' ------------------------------------------ Donnees du probleme -----------------------------------------------------'
 'Choisir entre : 1-scenario, 2-aleatoire, 3-csv'
-data = 2
+data = 1.02
 nb_porte, nb_cmd, tc, nb_dech, nb_mont, aleatoire, u, l, qte, choix_porte = read_data(data)
 
 '------------------------------------------- Creation des autres données du problème ---------------------------------'
@@ -33,11 +33,11 @@ print("Donnees du probleme :", round(end - start, 3), 'secondes')
 '=========================================== ALGORITHME GENETIQUE ===================================================='
 ' ------------------------------------------ Initialisation ----------------------------------------------------------'
 
-nb_enfant = 1.13
+nb_enfant = 5
 fv, all_ind = initialisation(nb_enfant, nb_trailer, nb_porte, nb_cmd, u, tc, q, ub, lb, beta, d, gamma, qte)
 
 ' ------------------------------------------ Iterations --------------------------------------------------------------'
-max_iter = 30
+max_iter = 1
 
 proba_cross = 0.8
 proba_mut = 0.2
@@ -59,9 +59,5 @@ seconds = round((end - start1) - (hours*3600) - (minutes*60), 3)
 tps_cpu = ("%dh %02dm %06.3fs" % (hours, minutes, seconds))
 print("Temps de calcul         :", tps_cpu)
 print("_______________________________________________________________________________")
-winsound.Beep(frequency=784, duration=200)
-winsound.Beep(frequency=988, duration=200)
-winsound.Beep(frequency=1319, duration=200)
-winsound.Beep(frequency=1568, duration=400)
-winsound.Beep(frequency=1319, duration=200)
-winsound.Beep(frequency=1568, duration=1000)
+winsound.Beep(frequency=2000, duration=200)
+winsound.Beep(frequency=3000, duration=400)
